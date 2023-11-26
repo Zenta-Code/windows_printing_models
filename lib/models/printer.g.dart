@@ -8,18 +8,18 @@ part of 'printer.dart';
 
 _$PrinterImpl _$$PrinterImplFromJson(Map<String, dynamic> json) =>
     _$PrinterImpl(
-      printerName: json['printerName'] as String?,
-      portName: json['portName'] as String?,
-      printProcessor: json['printProcessor'] as String?,
-      isPrinterOn: json['isPrinterOn'] as bool?,
       cJobs: json['cJobs'] as int?,
+      printerName: json['printerName'] as String?,
+      printerOnline: json['printerOnline'] as bool?,
+      printerPort: json['printerPort'] as String?,
+      printerProcessor: json['printerProcessor'] as String?,
     );
 
 Map<String, dynamic> _$$PrinterImplToJson(_$PrinterImpl instance) =>
     <String, dynamic>{
-      'printerName': instance.printerName,
-      'portName': instance.portName,
-      'printProcessor': instance.printProcessor,
-      'isPrinterOn': instance.isPrinterOn,
       'cJobs': instance.cJobs,
+      'printerName': instance.printerName,
+      'printerOnline': instance.printerOnline,
+      'printerPort': instance.printerPort,
+      'printerProcessor': instance.printerProcessor,
     };

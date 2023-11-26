@@ -6,11 +6,11 @@ part 'printer.g.dart';
 @freezed
 class Printer with _$Printer {
   factory Printer({
-    String? printerName,
-    String? portName,
-    String? printProcessor,
-    bool? isPrinterOn,
     int? cJobs,
+    String? printerName,
+    bool? printerOnline,
+    String? printerPort,
+    String? printerProcessor,
   }) = _Printer;
 
   const Printer._();
@@ -20,10 +20,10 @@ class Printer with _$Printer {
       _$PrinterFromJson(json);
 
   factory Printer.fromMap(Map<dynamic, dynamic> map) => Printer(
-        printerName: map['printerName'],
-        portName: map['portName'],
-        printProcessor: map['printProcessor'],
-        isPrinterOn: map['isPrinterOn'],
-        cJobs: map['cJobs'],
+        cJobs: map['cJobs'] as int?,
+        printerName: map['printerName'] as String?,
+        printerOnline: map['printerOnline'] as bool?,
+        printerPort: map['printerPort'] as String?,
+        printerProcessor: map['printerProcessor'] as String?,
       );
 }
