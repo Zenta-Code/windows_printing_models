@@ -23,6 +23,7 @@ mixin _$Printer {
   String? get printerName => throw _privateConstructorUsedError;
   String? get portName => throw _privateConstructorUsedError;
   String? get printProcessor => throw _privateConstructorUsedError;
+  bool? get isPrinterOn => throw _privateConstructorUsedError;
   int? get cJobs => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -39,6 +40,7 @@ abstract class $PrinterCopyWith<$Res> {
       {String? printerName,
       String? portName,
       String? printProcessor,
+      bool? isPrinterOn,
       int? cJobs});
 }
 
@@ -58,6 +60,7 @@ class _$PrinterCopyWithImpl<$Res, $Val extends Printer>
     Object? printerName = freezed,
     Object? portName = freezed,
     Object? printProcessor = freezed,
+    Object? isPrinterOn = freezed,
     Object? cJobs = freezed,
   }) {
     return _then(_value.copyWith(
@@ -73,6 +76,10 @@ class _$PrinterCopyWithImpl<$Res, $Val extends Printer>
           ? _value.printProcessor
           : printProcessor // ignore: cast_nullable_to_non_nullable
               as String?,
+      isPrinterOn: freezed == isPrinterOn
+          ? _value.isPrinterOn
+          : isPrinterOn // ignore: cast_nullable_to_non_nullable
+              as bool?,
       cJobs: freezed == cJobs
           ? _value.cJobs
           : cJobs // ignore: cast_nullable_to_non_nullable
@@ -92,6 +99,7 @@ abstract class _$$PrinterImplCopyWith<$Res> implements $PrinterCopyWith<$Res> {
       {String? printerName,
       String? portName,
       String? printProcessor,
+      bool? isPrinterOn,
       int? cJobs});
 }
 
@@ -109,6 +117,7 @@ class __$$PrinterImplCopyWithImpl<$Res>
     Object? printerName = freezed,
     Object? portName = freezed,
     Object? printProcessor = freezed,
+    Object? isPrinterOn = freezed,
     Object? cJobs = freezed,
   }) {
     return _then(_$PrinterImpl(
@@ -124,6 +133,10 @@ class __$$PrinterImplCopyWithImpl<$Res>
           ? _value.printProcessor
           : printProcessor // ignore: cast_nullable_to_non_nullable
               as String?,
+      isPrinterOn: freezed == isPrinterOn
+          ? _value.isPrinterOn
+          : isPrinterOn // ignore: cast_nullable_to_non_nullable
+              as bool?,
       cJobs: freezed == cJobs
           ? _value.cJobs
           : cJobs // ignore: cast_nullable_to_non_nullable
@@ -136,10 +149,11 @@ class __$$PrinterImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$PrinterImpl extends _Printer {
   _$PrinterImpl(
-      {required this.printerName,
-      required this.portName,
-      required this.printProcessor,
-      required this.cJobs})
+      {this.printerName,
+      this.portName,
+      this.printProcessor,
+      this.isPrinterOn,
+      this.cJobs})
       : super._();
 
   factory _$PrinterImpl.fromJson(Map<String, dynamic> json) =>
@@ -152,11 +166,13 @@ class _$PrinterImpl extends _Printer {
   @override
   final String? printProcessor;
   @override
+  final bool? isPrinterOn;
+  @override
   final int? cJobs;
 
   @override
   String toString() {
-    return 'Printer(printerName: $printerName, portName: $portName, printProcessor: $printProcessor, cJobs: $cJobs)';
+    return 'Printer(printerName: $printerName, portName: $portName, printProcessor: $printProcessor, isPrinterOn: $isPrinterOn, cJobs: $cJobs)';
   }
 
   @override
@@ -170,13 +186,15 @@ class _$PrinterImpl extends _Printer {
                 other.portName == portName) &&
             (identical(other.printProcessor, printProcessor) ||
                 other.printProcessor == printProcessor) &&
+            (identical(other.isPrinterOn, isPrinterOn) ||
+                other.isPrinterOn == isPrinterOn) &&
             (identical(other.cJobs, cJobs) || other.cJobs == cJobs));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, printerName, portName, printProcessor, cJobs);
+  int get hashCode => Object.hash(
+      runtimeType, printerName, portName, printProcessor, isPrinterOn, cJobs);
 
   @JsonKey(ignore: true)
   @override
@@ -194,10 +212,11 @@ class _$PrinterImpl extends _Printer {
 
 abstract class _Printer extends Printer {
   factory _Printer(
-      {required final String? printerName,
-      required final String? portName,
-      required final String? printProcessor,
-      required final int? cJobs}) = _$PrinterImpl;
+      {final String? printerName,
+      final String? portName,
+      final String? printProcessor,
+      final bool? isPrinterOn,
+      final int? cJobs}) = _$PrinterImpl;
   _Printer._() : super._();
 
   factory _Printer.fromJson(Map<String, dynamic> json) = _$PrinterImpl.fromJson;
@@ -208,6 +227,8 @@ abstract class _Printer extends Printer {
   String? get portName;
   @override
   String? get printProcessor;
+  @override
+  bool? get isPrinterOn;
   @override
   int? get cJobs;
   @override

@@ -11,6 +11,7 @@ _$PrinterImpl _$$PrinterImplFromJson(Map<String, dynamic> json) =>
       printerName: json['printerName'] as String?,
       portName: json['portName'] as String?,
       printProcessor: json['printProcessor'] as String?,
+      isPrinterOn: json['isPrinterOn'] as bool?,
       cJobs: json['cJobs'] as int?,
     );
 
@@ -19,5 +20,6 @@ Map<String, dynamic> _$$PrinterImplToJson(_$PrinterImpl instance) =>
       'printerName': instance.printerName,
       'portName': instance.portName,
       'printProcessor': instance.printProcessor,
+      'isPrinterOn': instance.isPrinterOn,
       'cJobs': instance.cJobs,
     };

@@ -6,10 +6,11 @@ part 'printer.g.dart';
 @freezed
 class Printer with _$Printer {
   factory Printer({
-    required String? printerName,
-    required String? portName,
-    required String? printProcessor,
-    required int? cJobs,
+    String? printerName,
+    String? portName,
+    String? printProcessor,
+    bool? isPrinterOn,
+    int? cJobs,
   }) = _Printer;
 
   const Printer._();
@@ -22,6 +23,7 @@ class Printer with _$Printer {
         printerName: map['printerName'],
         portName: map['portName'],
         printProcessor: map['printProcessor'],
+        isPrinterOn: map['isPrinterOn'],
         cJobs: map['cJobs'],
       );
 }
